@@ -27,7 +27,7 @@ client.on('message', message =>{
         channel.join().then(connection => {
             console.log("Successfully connected.");
             
-            const dispatcher = connection.play'./sounds/bilardo.mp3');
+            const dispatcher = connection.play('./sounds/bilardo.mp3');
             dispatcher.on("finish", finish => {
                 connection.disconnect();
                });
