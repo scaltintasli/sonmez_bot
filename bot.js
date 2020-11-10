@@ -16,25 +16,33 @@ client.on('message', message =>{
     
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    const channel = message.member.voice.channel;
 
-    if(command == 'bilardo') {
-        // message.channel.send('pong!');
-
-        const channel = message.member.voice.channel;
-
-        if (!channel) return console.error("The channel does not exist!");
-
-        channel.join().then(connection => {
-            console.log("Successfully connected.");
-            
-            const dispatcher = connection.play('./sounds/bilardo.mp3');
-            dispatcher.on("finish", finish => {
-                connection.disconnect();
-               });
-        }).catch(e => {
-            console.error(e);
-        });
-    }
+    playSonmez(command,channel);
+    // switch (command) {
+    //     case 'bilardo':
+    //         playSonmez(command, channel);
+    //         break;
+    //     default:
+    //         break;
+    // }
 });
 
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+function playSonmez(replik, channel) {
+    if (!channel) return console.error("Boyle bir ses kanali yok.");
+
+    channel.join().then(connection => {
+        console.log("Successfully connected.");
+        
+        const dispatcher = connection.play('./sounds/' + replik + '.mp3');
+        dispatcher.on("finish", finish => {
+            connection.disconnect();
+           });
+    }).catch(e => {
+        console.error(e);
+    });
+};
+
+
+// client.login(process.env.DISCORDJS_BOT_TOKEN);
+client.login('Nzc1MjI0NTk1ODEyNzEyNDg5.X6jOKg.FZuQfom0yXdrqJ6Zt24VdZforWg');
