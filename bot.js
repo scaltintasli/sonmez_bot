@@ -17,15 +17,11 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     const channel = message.member.voice.channel;
-
-    playSonmez(command,channel);
-    // switch (command) {
-    //     case 'bilardo':
-    //         playSonmez(command, channel);
-    //         break;
-    //     default:
-    //         break;
-    // }
+    if(command === 'sonmezkomutlar') {
+        message.channel.send("<@" + message.author.id + ">" + " Komut listesi: https://docs.google.com/document/d/1cXkJGQgF6rPvuwN7vEEXjhMX0shKIMG402mV5BK1r5o/edit")
+    } else {
+        playSonmez(command,channel);
+    }
 });
 
 function playSonmez(replik, channel) {
