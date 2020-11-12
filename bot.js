@@ -41,4 +41,3 @@ function playSonmez(replik, channel) {
 
 
 client.login(process.env.DISCORDJS_BOT_TOKEN);
-// client.login('Nzc1MjI0NTk1ODEyNzEyNDg5.X6jOKg.FZuQfom0yXdrqJ6Zt24VdZforWg');
