@@ -18,7 +18,7 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
     const channel = message.member.voice.channel;
     if(command === 'sonmezkomutlar') {
-        message.channel.send("<@" + message.author.id + ">" + " Komut listesi: https://docs.google.com/document/d/1cXkJGQgF6rPvuwN7vEEXjhMX0shKIMG402mV5BK1r5o/edit")
+        message.channel.send("<@" + message.author.id + ">" + " Komut listesi: https://docs.google.com/document/d/e/2PACX-1vRDkiaaYhi2We_6_PUYlLZHqWWjxtzwzKwPmcw9yc9p4NeqfbqnY9v2qQ1Uife-qckNIRVqY9ACetE3/pub")
     } else {
         playSonmez(command,channel);
     }
