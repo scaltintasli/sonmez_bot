@@ -8,6 +8,7 @@ const prefix = '-';
 
 client.once('ready', () => {
     console.log(`${client.user.username} has logged in.`);
+    client.user.setActivity("-sonmezkomutlar");
 });
 
 client.on('message', message =>{
